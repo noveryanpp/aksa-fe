@@ -1,0 +1,54 @@
+// Color Variables
+$blue-100: #0097d7;
+$blue-200: #0057ad;
+$blue-300: #114ba8;
+$blue-400: #11234c;
+$black: #000000;
+$white: #ffffff;
+$gray-100: #f7f7f7;
+$gray-200: #f0f0f0;
+$gradient-100: linear-gradient(90deg, $white 0%, $gray-100 100%);
+$gradient-200: linear-gradient(90deg, rgba($blue-100, 0.1) 0%, rgba($blue-400, 0.1) 100%);
+$gradient-300: linear-gradient(135deg, $blue-100 0%, $blue-200 100%);
+$gradient-400: linear-gradient(135deg, $blue-400 0%, $blue-300 100%);
+$section-padding: 1rem 0 3rem 0;
+
+// Font Variables
+@font-face {
+  font-family: 'Poppins Devanagari';
+  src: url('~/assets/fonts/Poppins.otf') format('opentype');
+  font-style: normal;
+  font-display: swap;
+}
+
+// Global Base Styles
+%card-base {
+  background: $gradient-100;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba($black, 0.1);
+  border: 1px solid $gray-200;
+  padding: 20px;
+}
+
+// Functions
+@function item-width($items-per-row, $gap-size) {
+  @return calc((100% - (#{$gap-size} * (#{$items-per-row} - 1))) / #{$items-per-row});
+}
+
+.section-heading-1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: $blue-400;
+  font-family: 'Poppins Devanagari', sans-serif;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $blue-400;
+  opacity: 0.7;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
